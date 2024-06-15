@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="aobj" class="com.pes.A" scope="prototype">
+		<!-- collaborators and configuration for this bean go here -->
+
+		<property name="a" value="99"></property>
+		<property name="message" value="wipro-Hyderabad"></property>
+	</bean>
+	<bean id="bobj" class="com.pes.B" scope="singleton" lazy-init="false">
+		<constructor-arg value="100"></constructor-arg>
+		<constructor-arg value="pes collage"></constructor-arg>
+	</bean>
+	<bean id="Hello" class="com.pes.Hello" scope="singleton">
+	<property name="aobj" ref="aobj"></property>
+	<constructor-arg ref="bobj"></constructor-arg>
+	</bean>
+
+
+</beans>
